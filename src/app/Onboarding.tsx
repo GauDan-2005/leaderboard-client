@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,21 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "./store";
-import { useRouter } from "next/navigation";
 
 export default function Onboarding() {
-  const USER = useSelector((state: RootState) => state.user);
-  const router = useRouter();
-
-  useEffect(() => {
-    if (USER.email) {
-      router.push("/home");
-    }
-  }, []);
-
   return (
     <div className="container mx-auto px-4 py-8">
       <Card className="max-w-md mx-auto">
